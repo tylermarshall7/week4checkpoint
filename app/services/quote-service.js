@@ -1,3 +1,5 @@
+import store from "../store.js";
+
 // @ts-ignore
 const _quoteApi = axios.create({
   baseURL: "//bcw-sandbox.herokuapp.com/api/quotes",
