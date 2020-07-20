@@ -9,22 +9,27 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body id="bg-image">
-	<div id="weather">
-		Your Weather Template
-	</div>
+<body id="bg-image" class="container-fluid">
+	<div class="row">
 
-	<div id="quote">
-		The Quote
-	</div>
 
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
-	</div>
 
+
+		<div id="quote" class="col-6 justify-content-center text-center">
+		</div>
+
+		<div id="weather">
+			Your Weather Template
+		</div>
+
+		<div>
+			A Todo List
+			<div id="todo-error"></div>
+			<form onsubmit=""></form>
+			<div id="todos"></div>
+		</div>
+
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
 </body>
