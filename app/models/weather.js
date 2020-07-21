@@ -4,16 +4,17 @@ export default class Weather {
     this.city = data.name
     this.kelvin = data.main.temp
     this.celcius = Math.round(data.main.temp - 273.15)
-    this.fahrenheit = this.celcius * 1.8 + 32
+    this.fahrenheit = (this.celcius * 1.8 + 32).toFixed()
   }
-}
 
-get WeatherTemplate() {
-  return /*html*/ `
-			<div class="col-2 border rounded shadow bg-transparent">
-          <h5>${this.city}</h5>
-          <h5>${this.tempInFahrenheit}°</h5>
+  get Template() {
+    return /*html*/ `
+			<div class="weather text-red">
+          <h1>${this.city}</h1>
+          <h3>${this.fahrenheit}°F</h3>
 			</div>
   `
+
+  }
 
 }

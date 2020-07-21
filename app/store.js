@@ -1,12 +1,13 @@
 import Weather from "./models/weather.js";
 import Quote from "./models/quote.js"
+import Todo from "./models/todo.js"
 
 let _state = {
   image: {},
   /**@type {any} */
   quote: [],
   /**@type {any[]}*/
-  todos: [], //TODO change 'any' to your todo model
+  todos: [],
   /**@type {any} */
   weather: []
 
