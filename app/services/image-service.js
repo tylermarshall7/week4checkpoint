@@ -17,5 +17,6 @@ class ImageService {
   }
 }
 
+
 const imageService = new ImageService();
 export default imageService;
