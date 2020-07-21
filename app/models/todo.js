@@ -14,7 +14,7 @@ export default class Todo {
       return `
       <div class="my-2 text-slash">
         <input checked type="checkbox" onchange="app.todoController.toggleTodoStatus('${this.id}')">
-        ${this.description} 
+        <s>${this.description}</s>
         <div class="text-right">
         <div class=" text-danger trash action" onclick="app.todoController.removeTodo('${this.id}')" aria-hidden="true">
         </div>
