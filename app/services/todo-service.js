@@ -3,7 +3,7 @@ import Todo from "../models/todo.js"
 
 // @ts-ignore
 const todoApi = axios.create({
-  baseURL: "https://bcw-sandbox.herokuapp.com/api/Tyler/todos/",
+  baseURL: "https://bcw-sandbox.herokuapp.com/api/Tyler/todos",
   timeout: 8000
 });
 
@@ -27,7 +27,7 @@ class TodoService {
   }
 
   async toggleTodoStatusAsync(todoId) {
-    let todo = store.State.todos.find(todo => todo._id == todoId);
+    let todo = store.State.todos.find(todo => todo.id == todoId);
 
     if (todo) {
       todo.completed = !todo.completed
@@ -39,6 +39,7 @@ class TodoService {
 
   async removeTodoAsync(todoId) {
     let todo = store.State.todos.find(tdl => tdl.id == todoId)
+    let res = await todoApi.delete(todo.id)
     this.getTodos()
   }
 

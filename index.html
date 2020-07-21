@@ -27,20 +27,20 @@
 
 
 	<div class="row container-fluid">
-		<form onsubmit="app.todoController.addTodo(e)">
+		<form onsubmit="app.todoController.addTodo(event)">
 			<div class="form-group">
 				<input type="text" class="form-control" name="description" id="description"
-					placeholder="type in a task!">
+					placeholder="type in a task!" required autocomplete="off">
 				<button type="submit" class="btn btn-success">add to list</button>
 			</div>
 		</form>
-		<button class="btn btn-danger delete-button" onclick="app.todoController.deleteFinishedTodos()">Delete
+		<button class="btn btn-danger delete-button" onclick="app.todoController.deleteCompletedTodos()">Delete
 			Completed Todos</button>
 		<div id="todos"></div>
 	</div>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
 </body>
 
 </html>

@@ -9,26 +9,30 @@ export default class Todo {
   }
 
   get Template() {
+
     if (this.completed == true) {
       return `
-      <li class="my-2 text-slash">
+      <div class="my-2 text-slash">
         <input checked type="checkbox" onchange="app.todoController.toggleTodoStatus('${this.id}')">
         ${this.description} 
-        <div class="text-right push-up">
-        <i class="fa text-danger fa-trash action" onclick="app.todoController.removeTodo('${this.id}')" aria-hidden="true"></i>
+        <div class="text-right">
+        <div class=" text-danger trash action" onclick="app.todoController.removeTodo('${this.id}')" aria-hidden="true">
         </div>
-      </li>`
+        </div>
+      </div>
+      `
     }
     else {
-      return `<li class="my-2"> 
-      <div class="">
+      return `<div class="my-2"> 
+      <div class="col-4">
       <input type="checkbox" id="" class="mr-2" onchange="app.todoController.toggleTodoStatus('${this.id}')">
       ${this.description}
       </div>
-      <div class="text-right push-up">
-      <div onclick="app.todoController.removeTodo('${this.id}')" aria-hidden="true"></i>
+      <div class="text-right">
+      <div onclick="app.todoController.removeTodo('${this.id}')" aria-hidden="true">
       </div>
-    </li>
+      </div>
+    </div>
       `
     }
   }
